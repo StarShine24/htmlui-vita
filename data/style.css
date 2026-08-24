@@ -1,0 +1,5 @@
+body { font-family: sans-serif; color: #fff; background: #222; margin: 0; padding: 20px; }
+#app { max-width: 720px; margin: auto; }
+button { padding: 10px 14px; margin: 6px; }
+#log { margin-top: 12px; background: rgba(255,255,255,0.04); padding: 10px; max-height: 300px; overflow:auto; }
+.controls { margin-top: 10px; }

@@ -1,0 +1,24 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>PSVita HTML UI</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div id="app">
+    <h1>PS Vita HTML UI</h1>
+    <div id="status">Connecting...</div>
+
+    <div class="controls">
+      <button id="btn-native">Call Native (POST)</button>
+      <button id="btn-send-ws">Send WS Message</button>
+      <input id="ws-msg" placeholder="WS message" />
+    </div>
+
+    <div id="log"></div>
+  </div>
+  <script src="app.js"></script>
+</body>
+</html>

@@ -1,0 +1,10 @@
+.gitignore
+
+# Build artifacts
+htmlui.elf
+*.o
+build/
+
+# civetweb fetch script output
+src/civetweb/civetweb.c
+src/civetweb/civetweb.h
