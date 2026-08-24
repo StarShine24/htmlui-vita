@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<param_sfo>
+  <title>HTMLUI Vita</title>
+  <title_id>VHUA00001</title_id>
+  <app_version>01.00</app_version>
+  <boot_display>1</boot_display>
+  <category>APPLICATION</category>
+  <psp2_system_ver>0x03600010</psp2_system_ver>
+</param_sfo>
