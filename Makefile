@@ -5,8 +5,9 @@ VITASDK ?= /opt/vitasdk
 CXX = $(VITASDK)/bin/arm-vita-eabi-g++
 CC  = $(VITASDK)/bin/arm-vita-eabi-gcc
 
-CXXFLAGS = -std=c++17 -O2 -G0 -fno-exceptions -fno-rtti -Isrc/civetweb -I$(VITASDK)/arm-vita-eabi/include
-LDFLAGS  = -Wl,-Ttext-segment=0x81000000 -L$(VITASDK)/arm-vita-eabi/lib -lsceNet -lsceNetCtl -lscePthread -lSceDisplay -lSceKernel
+# Note: removed '-G0' which some toolchains do not accept
+CXXFLAGS = -std=c++17 -O2 -fno-exceptions -fno-rtti -Isrc/civetweb -I$(VITASDK)/arm-vita-eabi/include
+LDFLAGS  = -Wl,-Ttext-segment=0x81000000 -L$(VITASDK)/arm-vita-eabi/lib -lsceNet -lsceNetCtl -lscePthread -lsceDisplay -lsceKernel
 
 SRCS = src/main.cpp src/civetweb/civetweb.c
 OBJS = $(SRCS:.cpp=.o)
@@ -26,4 +27,9 @@ htmlui.elf: $(OBJS)
 clean:
 	rm -f $(OBJS) htmlui.elf
 
-.PHONY: all clean
+package: htmlui.elf
+	@echo "Packaging VPK..."
+	chmod +x package/make_vpk.sh
+	./package/make_vpk.sh
+
+.PHONY: all clean package
